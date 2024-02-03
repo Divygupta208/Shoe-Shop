@@ -14,3 +14,8 @@
 .form button {
   margin: 10px 10px;
 }
+.main-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

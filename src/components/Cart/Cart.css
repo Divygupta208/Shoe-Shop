@@ -1,0 +1,10 @@
+.cart-main {
+  position: absolute;
+  top: 20vw;
+  left: 20vw;
+  width: 40%;
+  height: 30vh;
+  border: 2px black solid;
+  border-radius: 20px;
+  background-color: #e22c2c;
+}

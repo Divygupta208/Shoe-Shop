@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import "./Header.css";
+import Cart from "../Cart/Cart";
 const Header = (props) => {
   const nameRef = useRef();
   const descriptionRef = useRef();
@@ -23,7 +24,7 @@ const Header = (props) => {
   };
 
   return (
-    <div>
+    <div className="main-header">
       <form className="form" onSubmit={addItem}>
         <label htmlFor="shoe-name">Shoe Name</label>
         <input ref={nameRef} type="text" id="shoe-name" />
@@ -41,6 +42,7 @@ const Header = (props) => {
         </div>
         <button>Add Item</button>
       </form>
+      <button>Show Cart</button>
     </div>
   );
 };

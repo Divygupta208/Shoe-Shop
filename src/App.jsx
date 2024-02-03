@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "./components/Layout/Header";
-import ShoeList from "./components/ShoeList";
+import ShoeList from "./components/Shoes/ShoeList";
+import Cart from "./components/Cart/Cart";
 
 const INITIAL_ITEMS = [
   {
@@ -27,6 +28,7 @@ function App() {
     <>
       <Header addShoeItem={addShoeItemHandler} />
       <ShoeList shoes={shoeList} />
+      <Cart items={shoeList} />
     </>
   );
 }
