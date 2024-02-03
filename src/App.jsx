@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "./components/Layout/Header";
 import ShoeList from "./components/Shoes/ShoeList";
 import Cart from "./components/Cart/Cart";
+import CartProvider from "./components/store/CartProvider";
 
 const INITIAL_ITEMS = [
   {
@@ -16,6 +17,7 @@ const INITIAL_ITEMS = [
 ];
 
 function App() {
+  const [showCart, setShowCart] = useState(false);
   const [shoeList, setShoeList] = useState(INITIAL_ITEMS);
 
   const addShoeItemHandler = (item) => {
@@ -24,12 +26,16 @@ function App() {
     });
   };
 
+  const handleShowCart = () => {
+    setShowCart(!showCart);
+  };
+
   return (
-    <>
-      <Header addShoeItem={addShoeItemHandler} />
+    <CartProvider>
+      <Header addShoeItem={addShoeItemHandler} showCart={handleShowCart} />
       <ShoeList shoes={shoeList} />
-      <Cart items={shoeList} />
-    </>
+      {showCart && <Cart items={shoeList} />}
+    </CartProvider>
   );
 }
 

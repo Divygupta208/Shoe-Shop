@@ -42,7 +42,7 @@ const Header = (props) => {
         </div>
         <button>Add Item</button>
       </form>
-      <button>Show Cart</button>
+      <button onClick={props.showCart}>Show Cart</button>
     </div>
   );
 };

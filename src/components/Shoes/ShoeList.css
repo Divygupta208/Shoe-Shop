@@ -1,5 +1,11 @@
 .quantity {
   display: flex;
+  gap: 20px;
   justify-content: center;
   align-items: center;
+}
+.quantity input {
+  display: flex;
+  background-color: #fff;
+  width: 40px;
 }

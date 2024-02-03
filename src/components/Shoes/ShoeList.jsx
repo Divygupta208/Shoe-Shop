@@ -1,6 +1,17 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import "./ShoeList.css";
+
+const INITIAL_CART = [];
+
 const ShoeList = (props) => {
+  const [cartItems, setCartItems] = useState(INITIAL_CART);
+
+  const handleBuyLarge = () => {};
+
+  const handleBuyMedium = () => {};
+
+  const handleBuySmall = () => {};
+
   return (
     <div>
       <ul>
@@ -8,21 +19,17 @@ const ShoeList = (props) => {
           <li>
             {item.name}-{item.description}-{item.price}
             <div className="quantity">
-              <div>
-                <h4>Large</h4>
-                {item.Large}
-                <button>Buy Large</button>
-              </div>
-              <div>
-                <h4>Medium</h4>
-                {item.Medium}
-                <button>Buy Medium</button>
-              </div>
-              <div>
-                <h4>Small</h4>
-                {item.Small}
-                <button>Buy Small</button>
-              </div>
+              <button onClick={handleBuyLarge}>
+                Buy Large ( {item.Large})
+              </button>
+
+              <button onClick={handleBuyMedium}>
+                Buy Medium ( {item.Medium})
+              </button>
+
+              <button onClick={handleBuySmall}>
+                Buy Small ( {item.Small})
+              </button>
             </div>
           </li>
         ))}
